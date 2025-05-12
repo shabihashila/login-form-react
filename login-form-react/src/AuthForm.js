@@ -25,7 +25,7 @@ export default function AuthForm() {
 
       if (!response.ok) {
         throw new Error("Login failed!");
-      } 
+      }
 
       const data = await response.json();
       console.log("Login success:", data);
@@ -72,11 +72,7 @@ export default function AuthForm() {
             />
             <a href="#">Forgot password?</a>
             <button onClick={handleLogin}>Login</button>
-            {errorMessage && (
-              <p className="error">
-                {errorMessage}
-              </p>
-            )}
+            {errorMessage && <p className="error">{errorMessage}</p>}
             <p>
               Not a Member?
               <a href="#" onClick={() => setIsLogin(false)}>
