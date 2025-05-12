@@ -1,8 +1,40 @@
-// AuthForm.js
 import React, { useState } from "react";
 
 export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
+
+  // State variables for login form fields
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // State for handling API response (for error or success messages)
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // Handle login API call
+  const handleLogin = async () => {
+    const loginData = { email, password };
+
+    try {
+      const response = await fetch("https://localhost:44306/api/Auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed!");
+      } 
+
+      const data = await response.json();
+      console.log("Login success:", data);
+
+      // You can redirect or handle successful login here
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
 
   return (
     <div className="container">
@@ -26,10 +58,25 @@ export default function AuthForm() {
         {isLogin ? (
           <div className="form">
             <h4 className="create-colour">Login Form</h4>
-            <input type="email" placeholder="Email"></input>
-            <input type="password" placeholder="password"></input>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <a href="#">Forgot password?</a>
-            <button>Login</button>
+            <button onClick={handleLogin}>Login</button>
+            {errorMessage && (
+              <p className="error">
+                {errorMessage}
+              </p>
+            )}
             <p>
               Not a Member?
               <a href="#" onClick={() => setIsLogin(false)}>
