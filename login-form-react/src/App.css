@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #dbbefa; /* Very Light Pastel Purple */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.create-colour {
+  color: #490d92; /* Deep Purple Text */
+  padding-top: 10px;
+}
+
+.form-container {
+  background: linear-gradient(
+    145deg,
+    #b185db,
+    #7b2cbf
+  ); /* Soft Gradient Form Background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(123, 44, 191, 0.3); /* Soft Purple Shadow */
+  width: 320px;
+}
+
+.form-toggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-toggle button {
+  width: 50%;
+  padding: 10px;
+  background-color: #ac7adf; /* Light Purple */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.3s ease;
+}
+
+.form-toggle button:hover {
+  background-color: #bc9ed6; /* Deeper Purple on Hover */
+}
+
+.form-toggle .active {
+  background-color: #6b29a4; /* Dark Purple */
+  color: rgb(233, 202, 202);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #560b81; /* Deep Purple */
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #a664e4; /* Light Purple Border */
+  border-radius: 5px;
+  background-color: #faf5ff; /* Light Lavender */
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+  border-color: #da53ff; /* Focus Border Color */
+  outline: none;
+}
+
+.form button {
+  padding: 10px;
+  background: linear-gradient(135deg, #581e8f, #7b2cbf); /* Button Gradient */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background: linear-gradient(
+    135deg,
+    #7b2cbf,
+    #4a148c
+  ); /* Darker Gradient on Hover */
+}
+
+.form a {
+  color: #6913b4; /* Soft Purple Text */
+  text-decoration: none;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.form a:hover {
+  color: #5b21b6; /* Slightly Darker Purple on Hover */
+}
+
+.form p {
+  text-align: center;
+  color: #4a148c;
+}
